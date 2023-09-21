@@ -15,22 +15,14 @@ public class Main {
             System.out.println();
 
             switch (userInput) {
-                case 0:
+                case 0 -> {
                     System.out.println("Bye!");
                     status = false;
-                    break;
-                case 1:
-                    addIncome();
-                    break;
-                case 2:
-                    addPurchase();
-                    break;
-                case 3:
-                    showPurchases();
-                    break;
-                case 4:
-                    showBalance();
-                    break;
+                }
+                case 1 -> addIncome();
+                case 2 -> addPurchase();
+                case 3 -> showPurchases();
+                case 4 -> showBalance();
             }
         }
     }
@@ -57,13 +49,57 @@ public class Main {
     }
 
     private static void addPurchase() {
-        System.out.println("Enter purchase name:");
-        scanner.nextLine();
-        String item = scanner.nextLine();
-        System.out.println("Enter its price:");
-        float price = scanner.nextFloat();
-        menu.addPurchase(item, price);
-        System.out.println("Purchase was added!\n");
+
+        while (true) {
+            printPurchaseOptions();
+            int userInput = scanner.nextInt();
+            System.out.println();
+
+            if (userInput == 5) {
+                System.out.println();
+                break;
+            }
+
+            System.out.println("Enter purchase name:");
+            scanner.nextLine();
+            String item = scanner.nextLine();
+            System.out.println("Enter its price:");
+            float price = scanner.nextFloat();
+
+            PurchaseType purchase;
+
+            switch (userInput) {
+                case 1:
+                    purchase = menu.getPurchases().get("Food");
+                    purchase.addPurchase(item, price);
+                    break;
+                case 2:
+                    purchase = menu.getPurchases().get("Clothes");
+                    purchase.addPurchase(item, price);
+                    break;
+                case 3:
+                    purchase = menu.getPurchases().get("Entertainment");
+                    purchase.addPurchase(item, price);
+                    break;
+                case 4:
+                    purchase = menu.getPurchases().get("Other");
+                    purchase.addPurchase(item, price);
+                    break;
+            }
+
+            System.out.println("Purchase was added!\n");
+        }
+
+    }
+
+    private static void printPurchaseOptions() {
+        System.out.println("""
+            Choose the type of purchase
+            1) Food
+            2) Clothes
+            3) Entertainment
+            4) Other
+            5) Back""");
     }
 
     private static void showPurchases() {
