@@ -115,4 +115,9 @@ class Menu {
         return verdict;
     }
 
+    protected void addPurchase(String type, String name, Float price) {
+        PurchaseType purchaseType = this.getPurchases().get(type);
+        purchaseType.addPurchase(name, price);
+    }
+
 }

@@ -41,6 +41,10 @@ abstract class PurchaseType {
     protected boolean isEmpty() {
         return this.purchases.isEmpty();
     }
+
+    protected Map<String, Float> getPurchases() {
+        return this.purchases;
+    }
 }
 
 class Food extends PurchaseType {
