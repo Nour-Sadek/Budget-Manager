@@ -7,12 +7,10 @@ public class Main {
     static Menu menu = new Menu();
 
     public static void main(String[] args) {
-        // write your code here
         boolean status = true;
 
         while (status) {
-            printMenu();
-            int userInput = scanner.nextInt();
+            int userInput = GetUserInput.getMenuInput();
             System.out.println();
 
             switch (userInput) {
@@ -30,7 +28,7 @@ public class Main {
         }
     }
 
-    private static void printMenu() {
+    protected static void printMenu() {
         System.out.println("""
                 Choose your action:
                 1) Add income
@@ -49,27 +47,19 @@ public class Main {
         System.out.println("Income was added!\n");
     }
 
-    private static void showBalance() {
-        System.out.println("Balance: $" + menu.getBalance() + "\n");
-    }
+    private static void showBalance() { System.out.println("Balance: $" + menu.getBalance() + "\n"); }
 
     private static void addPurchase() {
 
         while (true) {
-            printPurchaseOptions();
-            int userInput = scanner.nextInt();
+            int userInput = GetUserInput.getPurchaseOptionsInput();
             System.out.println();
 
-            if (userInput == 5) {
-                System.out.println();
-                break;
-            }
+            if (userInput == 5) break;
 
             System.out.println("Enter purchase name:");
-            scanner.nextLine();
             String item = scanner.nextLine();
-            System.out.println("Enter its price:");
-            float price = scanner.nextFloat();
+            float price = GetUserInput.getPurchasePrice();
 
             PurchaseType purchase;
 
@@ -97,7 +87,7 @@ public class Main {
 
     }
 
-    private static void printPurchaseOptions() {
+    protected static void printPurchaseOptions() {
         System.out.println("""
             Choose the type of purchase
             1) Food

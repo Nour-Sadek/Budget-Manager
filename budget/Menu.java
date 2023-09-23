@@ -51,8 +51,7 @@ class Menu {
         } else {
             boolean status = true;
             while (status) {
-                showPurchaseMenu();
-                int userInput = scanner.nextInt();
+                int userInput = GetUserInput.getPurchaseMenuOptionsInput();
                 System.out.println();
 
                 PurchaseType purchase;
@@ -96,7 +95,7 @@ class Menu {
         System.out.println("Total sum: $" + this.calculateTotalSum() + "\n");
     }
 
-    private static void showPurchaseMenu() {
+    protected static void showPurchaseMenu() {
         System.out.println("""
             Choose the type of purchase
             1) Food
