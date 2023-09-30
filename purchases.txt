@@ -1,0 +1,87 @@
+income: 1000.0
+
+item:
+type: Entertainment
+name: LEGO DUPLO Town Farm Animals
+price: 10.1
+
+item:
+type: Entertainment
+name: Cinema
+price: 8.73
+
+item:
+type: Entertainment
+name: Skate rental
+price: 30.0
+
+item:
+type: Clothes
+name: Gildan LT
+price: 8.61
+
+item:
+type: Clothes
+name: Men's Dual Defense Crew Socks 12 Pairs
+price: 13.0
+
+item:
+type: Clothes
+name: Wrangler Men's Stretch Cargo Pant
+price: 19.97
+
+item:
+type: Food
+name: Almond 250g
+price: 35.43
+
+item:
+type: Food
+name: Milk
+price: 3.5
+
+item:
+type: Food
+name: Red Fuji Apple
+price: 5.99
+
+item:
+type: Food
+name: Eggs
+price: 3.99
+
+item:
+type: Food
+name: FIJI Natural Artesian Water
+price: 25.98
+
+item:
+type: Food
+name: Hershey's milk chocolate bars
+price: 8.54
+
+item:
+type: Food
+name: Great Value Broccoli Florets
+price: 1.0
+
+item:
+type: Food
+name: Keystone Ground Bee
+price: 6.28
+
+item:
+type: Other
+name: Sensodyne Pronamel Toothpaste
+price: 19.74
+
+item:
+type: Other
+name: Chick-fil-A $10 Gift Card
+price: 10.0
+
+item:
+type: Other
+name: Debt
+price: 3.5
+
