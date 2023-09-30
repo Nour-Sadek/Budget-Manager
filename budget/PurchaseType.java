@@ -19,7 +19,7 @@ abstract class PurchaseType {
             System.out.println("The purchase list is empty!\n");
         } else {
             for (var entry: this.purchases.entrySet()) {
-                System.out.println(entry.getKey() + " $" + entry.getValue());
+                System.out.println(entry.getKey() + " $" + String.format("%.2f", entry.getValue()));
             }
 
             System.out.println("Total sum: $" + this.calculateTotalSum() + "\n");
@@ -94,4 +94,3 @@ class Other extends PurchaseType {
     }
 
 }
-

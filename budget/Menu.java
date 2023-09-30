@@ -5,13 +5,12 @@ import java.util.*;
 class Menu {
     private float income;
     private Map<String, PurchaseType> purchases;
-    static Scanner scanner = new Scanner(System.in);
 
     Menu() {
         this.purchases = new HashMap<>();
         this.purchases.put("Food", new Food());
-        this.purchases.put("Clothes", new Clothes());
         this.purchases.put("Entertainment", new Entertainment());
+        this.purchases.put("Clothes", new Clothes());
         this.purchases.put("Other", new Other());
         this.income = 0;
     }
@@ -88,7 +87,7 @@ class Menu {
 
         for (PurchaseType purchase: this.purchases.values()) {
             for (var entry: purchase.purchases.entrySet()) {
-                System.out.println(entry.getKey() + " $" + entry.getValue());
+                System.out.println(entry.getKey() + " $" + String.format("%.2f", entry.getValue()));
             }
         }
 
